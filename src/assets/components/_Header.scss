@@ -4,8 +4,7 @@
     display: flex;
     align-items: center;
 
-    .title {
-        @extend .white-text;
+    > .title {
         font-size: 28px;
         font-weight: 700;
     }

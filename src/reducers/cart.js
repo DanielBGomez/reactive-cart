@@ -13,7 +13,7 @@ const cartApp = (state = initialState, action) => {
             })
         case 'REMOVE_ITEM_FROM_CART':
             return Object.assign({}, state, {
-                cartItems: state.cartItems.filter(item => item.uuid !== action.uuid)
+                cartItems: state.cartItems.filter(item => item.cartId != action.cartId)
             })
         default:
             return state

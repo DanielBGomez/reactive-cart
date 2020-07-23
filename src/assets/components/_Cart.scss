@@ -1,3 +1,100 @@
 #cart {
+    position: relative;
+
+    .icon {
+        @extend .padding-m;
+        cursor: pointer;
+        position: relative;
+        
+        &:before {
+            @extend .material-icons;
+            content: 'shopping_cart';
+            font-size: 32px;
+        }
+
+        &:after {
+            @extend .green, .darken-4, .padding-xxs--x, .padding-xxxs--y;
+            content: attr(data-items);
+            top: $xs;
+            right: $xxs;
+            font-size: 14px;
+            border-radius: 5px;
+            position: absolute;
+            align-items: center;
+            display: inline-flex;
+            font-family: monospace;
+            justify-content: center;
+        }
+    }
+    .popup {
+        right: 0;
+        top: 100%;
+        width: 80vw;
+        z-index: 10;
+        max-width: 400px;
+        position: absolute;
+
+        > .title {
+            font-size: 18px;
+            border-bottom: $color-gray-10 1px solid;
+        }
+
+        .elements {
+            overflow-y: auto;
+            min-height: 200px;
+            max-height: 500px;
+
+            .cart-item {
+                width: 100%;
+                display: flex;
     
+                &:last-child {
+                    margin-bottom: 0;
+                }
+    
+                .image {
+                    @include img(100%);
+                    width: 60px;
+                }
+                .contents {
+                    flex-grow: 1;
+                }
+                .remove {
+                    @extend .gray-text, .text-lighten-2;
+                    font-size: 32px;
+                    cursor: pointer;
+                    align-items: center;
+                    display: inline-flex;
+                    transition: all 100ms linear;
+    
+                    &:before {
+                        @extend .material-icons;
+                        content: 'delete';
+                        font-size: inherit;
+                    }
+    
+                    &:focus,
+                    &:hover {
+                        @extend .red-text;
+                    }
+                }
+            }
+        }
+        .total {
+            font-weight: 700;
+            text-align: right;
+            border-top: $color-gray-10 1px solid;
+
+            &:before {
+                content: 'Total: $';
+                margin-right: $m;
+                display: inline-block;
+            }
+            &:after {
+                content: attr(data-total);
+                min-width: 50px;
+                display: inline-block;
+            }
+        }
+    }
 }

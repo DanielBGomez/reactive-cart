@@ -1,4 +1,5 @@
 import { connect } from 'react-redux'
+import { removeItemFromCart } from '../actions/cart'
 import Cart from '../components/Cart'
 
 const mapStateToProps = (state, ownProps) => {
@@ -7,8 +8,17 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        removeItem: cartId => {
+            return dispatch(removeItemFromCart(cartId))
+        }
+    }
+}
+
 const CartContainer = connect(
-    mapStateToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(Cart)
 
 export default CartContainer

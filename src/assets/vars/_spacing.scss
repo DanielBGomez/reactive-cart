@@ -21,7 +21,7 @@ $auto: auto;
     $sizeValue: $m;
 
     @if ($size == 'no-space') { $sizeValue: $no-space }
-    @else if ($size == 'xxxs') { $sizeValue: $xxs }
+    @else if ($size == 'xxxs') { $sizeValue: $xxxs }
     @else if ($size == 'xxs') { $sizeValue: $xxs }
     @else if ($size == 'xs') { $sizeValue: $xs }
     @else if ($size == 's') { $sizeValue: $s }

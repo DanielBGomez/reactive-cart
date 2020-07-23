@@ -27,7 +27,7 @@ const ITEMS = require('./configs/items')
 ReactDOM.render(
     <Provider store={store}>
         <div id="app" className="white darken-2">
-            <header id="header" className="main margin-xxl--bottom padding-l--x">
+            <header id="header" className="main margin-xxl--bottom padding-l--x white-text">
                 <div className="title margin-no-space--left margin-auto--right">Reactive Cart</div>
                 <Cart className="margin-auto--left margin-no-space--right" />
             </header>
