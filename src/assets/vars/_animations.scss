@@ -1,0 +1,22 @@
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes fade {
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes success {
+    0% {
+        color: transparent;
+    }
+    20%, 80% {
+        color: transparent;
+        background-color: scale-color($color-green, $lightness: -10%);
+    }
+}

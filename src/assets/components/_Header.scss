@@ -1,0 +1,12 @@
+#header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+
+    .title {
+        @extend .white-text;
+        font-size: 28px;
+        font-weight: 700;
+    }
+}
