@@ -1,8 +1,18 @@
 import React from 'react'
 
 class Cart extends React.Component {
-    sortItems(items){
-
+    constructor(props){
+        // Always call parent
+        super(props)
+        // Local state
+        this.state = {
+            opened: false
+        }
+    }
+    toggle(){
+        this.setState({
+            opened: !this.state.opened
+        })
     }
     removeItem(cartId){
         if(typeof this.props.removeItem == "function") this.props.removeItem(cartId)
@@ -20,8 +30,8 @@ class Cart extends React.Component {
     render(){
         return (
             <div id="cart">
-                <div className="icon" data-items={this.props.items.length} />
-                <div className="popup white padding-m gray-text">
+                <div className="icon" data-items={this.props.items.length} onClick={() => this.toggle()} />
+                <div className="popup white padding-m gray-text" opened={this.state.opened.toString()}>
                     <div className="title gray-text text-lighten-2 padding-s--bottom margin-m--bottom">Elementos en el carrito</div>
                     <div className="elements padding-s--x">
                         {this.props.items.map(item => {
